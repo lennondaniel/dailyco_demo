@@ -4,16 +4,24 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: auto;
   justify-content: center;
   text-align: center;
+  margin: auto;
 }
 
-.home-screen h1 {
-  color: var(--white);
-  font-weight: bold;
+.home-screen img {
+  margin-bottom: 30px;
 }
 
 .home-screen p {
   color: var(--grey);
+}
+
+.home-screen button {
+  background-color: #eebf5e;
+  text-transform: uppercase;
+}
+
+.home-screen button:hover {
+  background-color: hsla(0, 0%, 100%, 0.87);
 }

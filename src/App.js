@@ -9,7 +9,6 @@ import { roomUrlFromPageUrl, pageUrlFromRoomUrl } from './utils';
 
 import HomeScreen from './components/HomeScreen/HomeScreen';
 import Call from './components/Call/Call';
-import Header from './components/Header/Header';
 import Tray from './components/Tray/Tray';
 import HairCheck from './components/HairCheck/HairCheck';
 
@@ -208,7 +207,6 @@ export default function App() {
 
   return (
     <div className="app">
-      <Header />
       {renderApp()}
     </div>
   );

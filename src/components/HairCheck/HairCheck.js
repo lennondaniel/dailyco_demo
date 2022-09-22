@@ -59,7 +59,7 @@ export default function HairCheck({ joinCall, cancelCall }) {
     <UserMediaError />
   ) : (
     <form className="hair-check" onSubmit={join}>
-      <h1>Setup your hardware</h1>
+      <h1>configuração da Chamada</h1>
       {/* Video preview */}
       {videoTrack?.persistentTrack && <video autoPlay muted playsInline ref={videoElement} />}
 
@@ -111,11 +111,11 @@ export default function HairCheck({ joinCall, cancelCall }) {
         </select>
       </div>
 
-      <button onClick={join} type="submit">
-        Join call
+      <button onClick={join} type="submit" className="enter-call">
+        Entrar na chamada
       </button>
       <button onClick={cancelCall} className="cancel-call" type="button">
-        Back to start
+        Voltar para início
       </button>
     </form>
   );

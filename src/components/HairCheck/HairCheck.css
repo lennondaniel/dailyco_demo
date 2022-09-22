@@ -42,6 +42,9 @@
 .hair-check button {
   margin-top: 2em;
 }
+.hair-check .enter-call {
+  background-color: #eebf5e;
+}
 
 .hair-check button + button {
   margin-top: 0;
