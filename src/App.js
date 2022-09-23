@@ -53,7 +53,11 @@ export default function App() {
     setRoomUrl(url);
     setCallObject(newCallObject);
     setAppState(STATE_HAIRCHECK);
-    await newCallObject.preAuth({ url }); // add a meeting token here if your room is private
+    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbyI6ZmFsc2UsInZvIjpmYWxzZSwiZCI6IjgyZTRhZmE1LThiNGMtNDZkZS1hNmQzLWYzODM4MWRjYzRmMSIsImlhdCI6MTY2MzkzNzI2NH0.IhBe86B8JbnsNHFH60hzNRbpkwwuX8STxiFr4-PCpq0';
+    await newCallObject.preAuth({ 
+      url,
+      token
+    }); // add a meeting token here if your room is private
     await newCallObject.startCamera();
   }, []);
 
@@ -61,7 +65,11 @@ export default function App() {
    * Once we pass the hair check, we can actually join the call.
    */
   const joinCall = useCallback(() => {
-    callObject.join({ url: roomUrl });
+    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbyI6ZmFsc2UsInZvIjpmYWxzZSwiZCI6IjgyZTRhZmE1LThiNGMtNDZkZS1hNmQzLWYzODM4MWRjYzRmMSIsImlhdCI6MTY2MzkzNzI2NH0.IhBe86B8JbnsNHFH60hzNRbpkwwuX8STxiFr4-PCpq0';
+    callObject.join({ 
+      url: roomUrl,
+      token
+    });
   }, [callObject, roomUrl]);
 
   /**
