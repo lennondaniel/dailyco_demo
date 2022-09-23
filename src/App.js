@@ -11,6 +11,7 @@ import HomeScreen from './components/HomeScreen/HomeScreen';
 import Call from './components/Call/Call';
 import Tray from './components/Tray/Tray';
 import HairCheck from './components/HairCheck/HairCheck';
+import Header from "./components/Header/Header";
 
 /* We decide what UI to show to users based on the state of the app, which is dependent on the state of the call object. */
 const STATE_IDLE = 'STATE_IDLE';
@@ -207,6 +208,7 @@ export default function App() {
 
   return (
     <div className="app">
+      <Header/>
       {renderApp()}
     </div>
   );

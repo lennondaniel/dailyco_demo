@@ -51,9 +51,8 @@ export default function Call() {
       ) : (
         // When there are no remote participants or screen shares
         <div className="info-box">
-          <h1>Waiting for others</h1>
-          <p>Invite someone by sharing this link:</p>
-          <span className="room-url">{window.location.href}</span>
+          <h1>Aguarde o médico entrar</h1>
+          {/* <span className="room-url">{window.location.href}</span> */}
         </div>
       )}
     </div>
