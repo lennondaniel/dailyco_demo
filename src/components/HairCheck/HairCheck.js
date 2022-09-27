@@ -1,11 +1,11 @@
-import React, { useEffect, useRef, useCallback, useState } from 'react';
 import {
-  useLocalParticipant,
-  useVideoTrack,
-  useDevices,
   useDaily,
   useDailyEvent,
+  useDevices,
+  useLocalParticipant,
+  useVideoTrack,
 } from '@daily-co/daily-react-hooks';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import UserMediaError from '../UserMediaError/UserMediaError';
 
 import './HairCheck.css';
@@ -18,6 +18,29 @@ export default function HairCheck({ joinCall, cancelCall }) {
   const videoElement = useRef();
 
   const [getUserMediaError, setGetUserMediaError] = useState(false);
+  const localState = {
+    blur: false,
+  };
+
+  function toggleBlur() {
+    let type;
+    let config;
+    if (!localState.blur) {
+      type = 'background-blur';
+      config = { strength: 0.5 };
+    } else {
+      type = 'none';
+    }
+
+    callObject.updateInputSettings({
+      video: {
+        processor: {
+          type,
+          config,
+        },
+      },
+    });
+  }
 
   useDailyEvent(
     'camera-error',
@@ -110,7 +133,9 @@ export default function HairCheck({ joinCall, cancelCall }) {
           ))}
         </select>
       </div>
-
+      <button onClick={toggleBlur} type="button" className="blur-off">
+        Embaçar fundo da tela
+      </button>
       <button onClick={join} type="submit" className="enter-call">
         Entrar na chamada
       </button>
