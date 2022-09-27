@@ -46,6 +46,10 @@
   background-color: #eebf5e;
 }
 
+.blur-off {
+  background-color: white;
+}
+
 .hair-check button + button {
   margin-top: 0;
 }
