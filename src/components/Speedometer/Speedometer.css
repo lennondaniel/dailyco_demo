@@ -1,0 +1,14 @@
+.speedometer-wrapper {
+    padding: 1rem;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+}
+
+.speedometer-wrapper h2 {
+    color: white;
+}
