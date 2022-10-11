@@ -3,6 +3,7 @@ import './Speedometer.css'
 
 function Speedometer (props) {
 	const { bandWidth } = props;
+	// Round value to 2 decimals
 	const bandWidthInt = Math.round((Number(bandWidth) + Number.EPSILON) * 100) / 100
 
 	if (bandWidth > 3 && bandWidth < 5){
@@ -10,15 +11,15 @@ function Speedometer (props) {
 			<div className="speedometer-wrapper">
 			<h2>Teste de Conexão (MB/s)</h2>
 			<ReactSpeedometer
-				maxValue={5}
+				maxValue={8}
 				value={bandWidthInt}
-				needleColor="red"
+				needleColor="orange"
 				startColor="green"
 				segments={10}
-				endColor="orange"
+				endColor="red"
 				textColor="white"
 			/>
-			<p>Sua Conexão está boa. Clique no botão para entrar na chamada</p>
+		<p>Sua Conexão está boa. Clique no botão para entrar na chamada</p>
 		</div>
 		)
 	}
@@ -28,12 +29,12 @@ function Speedometer (props) {
 			<div className="speedometer-wrapper">
 				<h2>Teste de Conexão (MB/s)</h2>
 				<ReactSpeedometer
-					maxValue={5}
+					maxValue={8}
 					value={bandWidthInt}
-					needleColor="red"
+					needleColor="orange"
 					startColor="green"
 					segments={10}
-					endColor="orange"
+					endColor="red"
 					textColor="white"
 				/>
 				<p>Sua Conexão está excelente. Clique no botão para entrar na chamada</p>
@@ -45,15 +46,15 @@ function Speedometer (props) {
 		<div className="speedometer-wrapper">
 			<h2>Teste de Conexão (MB/s)</h2>
 			<ReactSpeedometer
-				maxValue={10}
+				maxValue={8}
 				value={bandWidthInt}
-				needleColor="red"
+				needleColor="orange"
 				startColor="green"
 				segments={10}
-				endColor="orange"
+				endColor="red"
 				textColor="white"
 			/>
-			<p>Sua Conexão está ruim. Por favor, recarregue a página e tente novamente.</p>
+			<p>Sua Conexão está ruim. Aguarde alguns segundos ou recarregue a página.</p>
 		</div>
 	)
 }
