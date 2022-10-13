@@ -201,9 +201,14 @@ export default function App() {
         </DailyProvider>
       );
     }
-
+    
     // The default view is the HomeScreen, from where we start the demo.
-    return <HomeScreen createCall={createCall} startHairCheck={startHairCheck} />;
+    return (
+      <HomeScreen
+        createCall={createCall}
+        startHairCheck={startHairCheck}
+      />
+    )
   };
 
   return (

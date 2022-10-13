@@ -19,5 +19,7 @@ module.exports = {
     'react/no-array-index-key': 'off',
     'react/prop-types': 'off',
     'react/react-in-jsx-scope': 'off',
+    'react/self-closing-comp': 'off',
+    'react/function-component-definition': 'off',
   },
 };
