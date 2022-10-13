@@ -1,8 +1,9 @@
 import React from 'react';
 import './HomeScreen.css';
 import Speedometer from '../Speedometer/Speedometer';
+import NetworkCheck from '../NetworkCheck/NetworkCheck';
 
-export default function HomeScreen({ createCall, startHairCheck, bandWidth }) {
+export default function HomeScreen({ createCall, startHairCheck, onCheckSpeed, bandWidth }) {
   const startDemo = () => {
     createCall().then((url) => {
       startHairCheck(url);
@@ -12,6 +13,7 @@ export default function HomeScreen({ createCall, startHairCheck, bandWidth }) {
   return (
     <div className="home-screen">
       <img src="/images/logo_3778.svg" alt="logo" />
+      <NetworkCheck onCheckSpeed={onCheckSpeed}/>
       <Speedometer bandWidth={bandWidth}></Speedometer>
       {
         bandWidth < 5 && bandWidth !== 0 ? 
@@ -19,7 +21,7 @@ export default function HomeScreen({ createCall, startHairCheck, bandWidth }) {
         <button onClick={startDemo} type="button">Entrar na sala</button>
         <p className="small">Selecione Permitir para usar sua câmera e microfone para esta chamada, se solicitado</p>
       </>
-      : <p>Conexão ruim. Tente novamente.</p>
+      : <p>Carregando ...</p>
       }
       
    </div>

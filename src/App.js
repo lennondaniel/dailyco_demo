@@ -12,7 +12,7 @@ import Call from './components/Call/Call';
 import Tray from './components/Tray/Tray';
 import HairCheck from './components/HairCheck/HairCheck';
 import Header from "./components/Header/Header";
-import NetworkCheck from './components/NetworkCheck/NetworkCheck';
+// import NetworkCheck from './components/NetworkCheck/NetworkCheck';
 
 /* We decide what UI to show to users based on the state of the app, which is dependent on the state of the call object. */
 const STATE_IDLE = 'STATE_IDLE';
@@ -28,7 +28,7 @@ export default function App() {
   const [roomUrl, setRoomUrl] = useState(null);
   const [callObject, setCallObject] = useState(null);
   const [apiError, setApiError] = useState(false);
-  const [bandWidth, setBandWidth] = useState("0");
+  const [bandWidth, setBandWidth] = useState(0);
 
   /**
    * Create a new call room. This function will return the newly created room URL.
@@ -206,16 +206,12 @@ export default function App() {
     
     // The default view is the HomeScreen, from where we start the demo.
     return (
-      <>
-        <HomeScreen
-          createCall={createCall}
-          startHairCheck={startHairCheck}
-          bandWidth={bandWidth}
-        />
-        <NetworkCheck
-          onCheckSpeed={speed => setBandWidth(speed)}
-        />
-      </>
+      <HomeScreen
+        createCall={createCall}
+        startHairCheck={startHairCheck}
+        onCheckSpeed={speed => setBandWidth(speed)}
+        bandWidth={bandWidth}
+      />
     )
   };
 
