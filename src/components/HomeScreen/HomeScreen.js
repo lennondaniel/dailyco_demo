@@ -1,19 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './HomeScreen.css';
 import Speedometer from '../Speedometer/Speedometer';
 import NetworkCheck from '../NetworkCheck/NetworkCheck';
 
-export default function HomeScreen({ createCall, startHairCheck, onCheckSpeed, bandWidth }) {
+export default function HomeScreen({ createCall, startHairCheck }) {
+  
+  const [bandWidth, setBandWidth] = useState(0);
+
   const startDemo = () => {
     createCall().then((url) => {
       startHairCheck(url);
-    });    
+    });
   };
   
   return (
     <div className="home-screen">
       <img src="/images/logo_3778.svg" alt="logo" />
-      <NetworkCheck onCheckSpeed={onCheckSpeed}/>
+      <NetworkCheck onCheckSpeed={setBandWidth}/>
       <Speedometer bandWidth={bandWidth}></Speedometer>
       {
         bandWidth < 5 && bandWidth !== 0 ? 
